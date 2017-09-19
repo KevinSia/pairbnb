@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 
 gem 'clearance'
 
+gem 'figaro'
+
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
