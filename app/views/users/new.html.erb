@@ -1,0 +1,23 @@
+<div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
+  <% if @user.errors.size > 0 %>
+    The following inputs are stopping the user to be created.
+    <ul>
+      <% @user.errors.to_hash(true).each do |_, messages| %>
+        <li><%= messages.first %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
+  <% end %>
+</div>
